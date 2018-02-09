@@ -20,4 +20,29 @@ router.get('/', function(req, res, next) {
   })
 });
 
+router.get('/marlon', function(req, res, next){
+
+
+
+  var links = [
+    {text: "Google", url:"https://www.google.com/"},
+    {text: "Amazon", url:"https://www.amazon.com/"},
+    {text: "Apple", url:"https://www.apple.com/"}
+  ]
+
+
+
+
+
+  res.render('marlon_view',  {title: 'Marlon Page', data: links});
+})
+
+
+router.get('/videos', function(req, res, next){
+
+  res.sendFile(path.join(__basedir, 'public/pages/videos.html'));
+  // res.send('route working');
+})
+
+
 module.exports = router;

@@ -1,0 +1,11 @@
+body {
+  color: white;
+  background-color: rgba(20,20,20,.9);
+  font-family: Avenir;
+  width: 80%;
+  margin: auto;
+}
+
+a {
+  color: white;
+}
