@@ -2,6 +2,21 @@ var express = require('express');
 var router = express.Router();
 const fs = require('fs');
 const path = require('path');
+// var videos = require('../data/json/videos.json');
+var links = [
+  {
+    "text": "Google",
+    "url": "https://www.google.com/"
+  },
+  {
+    "text": "Amazon",
+    "url": "https://www.amazon.com/"
+  },
+  {
+    "text": "Apple",
+    "url": "https://www.apple.com/"
+  }
+]
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,21 +35,8 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/marlon', function(req, res, next){
-
-
-
-  var links = [
-    {text: "Google", url:"https://www.google.com/"},
-    {text: "Amazon", url:"https://www.amazon.com/"},
-    {text: "Apple", url:"https://www.apple.com/"}
-  ]
-
-
-
-
-
-  res.render('marlon_view',  {title: 'Marlon Page', data: links});
+router.get('/linksdemo', function(req, res, next){
+  res.render('links_view',  {title: 'Links Page', data: links});
 })
 
 
