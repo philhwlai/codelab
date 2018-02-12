@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const videos = require('../data/json/videos.json');
 const links_list = require('../data/json/links.json');
+const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
 const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
 
 /* GET home page. */
@@ -37,5 +38,7 @@ router.get('/threejs', function(req, res, next){
 })
 
 router.get('/slack', slackTools.channel_history);
+
+router.get('/gifs', linksMachine.gifs);
 
 module.exports = router;
