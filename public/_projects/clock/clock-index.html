@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>d3-site-02</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/mkclock.js"></script>
+  </head>
+
+
+<body>
+<h1>Clock</h1>
+
+<div id="clock-choice">
+  <p>what type of clock would you like?</p>
+  <label for="c-hands">
+    Hand (required):
+  </label>
+  <select id="c-hands">
+    <option value="">select</option>
+    <option value="R">Red</option>
+    <option value="G">Green</option>
+    <option value="B">Blue</option>
+  </select>
+</div>
+
+  <svg width = "800" height = "100">
+    <text class="outlines" x="0" y="70" letter-spacing = "5px" fill = "rgba(50,55,55,.1)">
+    CLOCK GOES HERE
+    </text>
+  </svg>
+</div>
+
+<div class="group method">
+  <form id="shipping-method">
+                        <label for="r-method-pickup">Shipping and Handling:</label><br>
+                        <input type="radio" value="pickup" name="r_method" id="r-method-pickup" checked> <label for="r-method-pickup">Pickup (free)</label><br>
+
+                        <input type="radio" value="usps" name="r_method" id="r-method-usps"> <label for="r-method-usps">US Mail ($2/item)</label><br>
+
+                        <input type="radio" value="ups" name="r_method" id="r-method-ups"> <label for="r-method-ups">UPS ($3/item)</label>
+                  </form>  </div>
+
+                    <div class="group special">
+                        <label for="c-special-gift">Special:</label><br>
+                        <input type="checkbox" value="YES" name="c-special-gift" id="c-special-gift"> <label for="c-special-gift">This is a gift (include a card)</label><br>
+
+                        <input type="checkbox" value="YES" name="c-special-email" id="c-special-email"> <label for="c-special-email">Sign up for the H+ mailing list</label><br>
+
+                        <input type="checkbox" value="YES" name="c-special-recipes" id="c-special-recipes"> <label for="c-special-recipes">Include H+ recipes (free!)</label>
+                    </div>
+
+                    <div class="group notes">
+                        <label for="txt-notes">Other notes:</label><br>
+
+                        <textarea name="txt-notes" id="txt-notes" rows="2" placeholder="Any other comments (does not affect estimate)"></textarea>
+                    </div>
+
+                    <div class="group calc">
+                        <p>
+                        <label for="btn-estimate">Click to estimate:</label><br>
+                        <input type="submit" value="Estimate Total" id="btn-estimate">
+                        <input type="text" id="txt-estimate" placeholder="$0.00">
+                        </p>
+
+                        <div id="results"></div>
+                    </div>
+
+
+
+<script type="text/javascript" src="js/mkclock.js"></script>
+</body>
+</html>

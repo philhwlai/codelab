@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link href="../css/dark.css" rel="stylesheet">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+      <div class="container">
+        <% for (var i = 0; i < videoLinks.length; i++) {  %>
+              <iframe src=<%= videoLinks[i].url  %> width= <%= width  %> height=<%= height  %> frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <%  } %>
+      </div>
+    </body>
+</html>

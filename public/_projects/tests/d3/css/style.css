@@ -1,0 +1,12 @@
+body {
+  font-family: 'Avenir';
+  font-weight: 400;
+  color: white;
+  background-color: rgba(70,70,70,1.0);
+}
+
+h2 {
+  font-family: 'Avenir';
+  font-weight: 400;
+  font-size: 40px;
+}

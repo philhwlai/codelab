@@ -1,0 +1,100 @@
+/* body{
+  background-image: url(../_images/c4d_MLV.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+*/
+
+h1 {
+  font-family: Avenir;
+  font-size: 2em;
+  font-weight: 100;
+  margin-top: 20px;
+  line-height: 1;
+  margin-left: 100px;
+}
+
+#Layer_1 {
+  width: 80%;
+  margin: auto;
+}
+#mainBlock {
+margin: auto;
+
+}
+.content{
+color: rgba(255,255,255,0.7);
+
+}
+
+.wrapper {
+  margin: 2em auto 2em auto;
+  width: 80%;
+  position: relative;
+
+}
+.circle-square {
+
+
+}
+
+.rectangle {
+  animation-name: slideBack;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-iteration-count: 20;
+}
+
+.blue-circle {
+
+}
+
+#Layer_1 {
+  animation-name: slide;
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 20;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+#Layer_2 {
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 20;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+#Layer_3 {
+  animation-name: slide;
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 20;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+@keyframes slide {
+  from{transform: translateX(0);}
+  to{transform: translateX(400px);}
+
+}
+
+
+@keyframes slideBack {
+  0% {transform: (1000px);}
+  50% {transform: translateX(0px);}
+  100% {transform: translateX(-2000px);}
+
+}
+
+p{
+font-family: Avenir;
+font-weight: 500;
+
+}

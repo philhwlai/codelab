@@ -1,0 +1,54 @@
+/* body{
+  background-image: url(../_images/c4d_MLV.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+*/
+
+.wrapper {
+  margin: 2em auto 2em auto;
+  width: 80%;
+  position: relative;
+}
+
+#outerRect {
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-fill-mode: both;
+  animation-iteration-count: 20;
+  animation-direction: alternate;
+}
+
+#innerRect {
+  animation-name: slideY;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+  animation-fill-mode: both;
+  animation-iteration-count: 20;
+  animation-direction: alternate;
+}
+
+
+
+
+@keyframes slide {
+  from{transform: translateX(0);}
+  to{transform: translateX(200px);}
+
+}
+
+@keyframes slideY {
+  from{transform: translateY(0);}
+  to{transform: translateY(200px);}
+
+}
+
+@keyframes slideBack {
+  0% {transform: (1000px);}
+  50% {transform: translateX(0px);}
+  100% {transform: translateX(-2000px);}
+
+}

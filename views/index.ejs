@@ -11,12 +11,10 @@
       here are some links:
     </p>
     <ol>
-      <% for (i=0; i<links.length; i++) {%>
-
-    </links.length;>
-      <li>
-        <a href= <%= links[i].url %> >link to <%- links[i].title %> </a>
-      </li>
+      <% for (i=0; i<links.length; i++) { %>
+        <li>
+          <a href= <%= links[i].url %> >link to <%- links[i].title %> </a>
+        </li>
       <% }  %>
       <li>
         <a href="/tests/d3/d3_003.html">

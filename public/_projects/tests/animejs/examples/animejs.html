@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <title>Dashboard Template for Bootstrap</title>
+    <style>
+      h1 {font-family: Futura}
+      div.widen {
+        width: 100px;
+        height: 50px;
+        background: red;
+        -webkit-transition: width 2s; /* Safari */
+        transition: width 2s;
+      }
+
+      div.widen:hover {
+        width: 300px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 onmousemove="moveFunction()">anime.js tests</h1>
+    <body>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div class="widen">
+      widen
+    </div>
+    <div id="cssSelector">
+  <div class="line">
+    <div class="square el"></div>
+  </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script>
+
+      function moveFunction(){
+        document.querySelector('h1').innerHTML = "test"
+      }
+      var cssSelector = anime({
+        targets: '#cssSelector .el',
+        translateX: 250
+      });
+
+    </script>
+  </body>
+</html>
