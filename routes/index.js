@@ -8,7 +8,7 @@ const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var linksFolder = path.join(__basedir, 'public/tests/animejs/examples/anime');
+  var linksFolder = path.join(__basedir, 'public/_projects/tests/animejs/examples/anime');
   fs.readdir(linksFolder, (err, paths)=>{
     var theLinks = [];
     paths.forEach(path=>{
