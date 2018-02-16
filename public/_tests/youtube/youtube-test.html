@@ -3,11 +3,10 @@
   <body>
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
-    <div id="logButton" style="width: 100px; height: 100px; border-style: solid; border-color: green; border-radius: 5px; border-width: 3px; ">
-      push here.
+    <div id="logButton" style="width: 100px; height: 100px; border-style: solid; border-color: green; border-radius: 5px; border-width: 3px; padding: 5px">
+      click here on the beat.
     </div>
-    <div id="results">
-
+    <div id="results" style="font-family: 'Avenir'; font-size: 10px; ">
     </div>
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -34,7 +33,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: 'z5rRZdiu1UE',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -52,10 +51,10 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+        //   setTimeout(stopVideo, 6000);
+        //   done = true;
+        // }
       }
       function stopVideo() {
         player.stopVideo();
