@@ -25,12 +25,7 @@
 
     <main id="playercontainer" class="main-content">
       <div class="container">
-        container start before iframe
-        <iframe id="player" src="https://www.youtube.com/embed/Wmc8bQoL-J0?enablejsapi=1"
-frameborder="0" allowfullscreen class="video"></iframe>
-      </div>
-      <div id="results" style="font-family: 'Avenir'; font-size: 10px; ">
-        results here
+
       </div>
     </main><!-- #content .main-content -->
     <div class="result-box">
@@ -69,7 +64,10 @@ frameborder="0" allowfullscreen class="video"></iframe>
     var player;
 
     function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
+      player = new YT.Player('playercontainer', {
+          videoId: 'z5rRZdiu1UE',
+          width: '360',
+          height: '220',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
