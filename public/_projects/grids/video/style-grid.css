@@ -1,0 +1,84 @@
+.site {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 20vh 1fr 1fr 20vh;
+  grid-template-areas:
+    "title title"
+    "main main"
+    "sidebar sidebar"
+    "footer masthead";
+  grid-gap: .3em;
+  margin: .3em;
+}
+
+@media screen and (min-width: 600px) {
+  .site {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr 100px;
+    grid-template-areas:
+      "title title masthead"
+      "main sidebar sidebar"
+      "main sidebar sidebar"
+      "footer footer footer";
+    max-height: 100vh;
+    min-height: 100vh;
+  }
+}
+
+/* .container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+.page-title {
+  grid-area: title;
+  border-radius: 10px;
+}
+
+.masthead {
+  /* grid-column: 1/2;
+  grid-row: 1/2; */
+  /* z-index: +100; */
+  grid-area: masthead;
+  border-radius: 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  overflow: scroll;
+  border-radius: 10px;
+}
+
+.main-content {
+  grid-area: main;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.footer-content {
+  grid-area: footer;
+  border-radius: 10px;
+}
+
+.logging-button {
+
+}
+
+h2 {
+
+}
+
+h1 {
+
+}
