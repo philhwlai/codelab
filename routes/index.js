@@ -37,6 +37,11 @@ router.get('/threejs', function(req, res, next){
   res.sendFile(path.join(__basedir, 'public/thepage/web-projects-2017/atom-ll-workshop/three-tests/index.html'));
 })
 
+router.get('/youtube-markers', function(req, res, next){
+  res.sendFile(path.join(__basedir, 
+    'public/_projects/grids/video/youtube-markers.html'));
+})
+
 router.get('/slack', slackTools.channel_history);
 
 router.get('/gifs', linksMachine.gifs);
