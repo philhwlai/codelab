@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+      <%= data %>
+    </p>
+    <ol>
+      <% for (var i = 0; i < data.length; i++) {  %>
+        <li>
+          <a href= <%= data[i].url %>>
+            <%= data[i].title %>
+          </a>
+        </li>
+      <%  } %>
+    </ol>
+<p>
+  <a href="https://www.google.com">Google Here!!!!</a>
+</p>
+
+  </body>
+</html>

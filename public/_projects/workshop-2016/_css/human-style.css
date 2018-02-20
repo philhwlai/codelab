@@ -1,0 +1,51 @@
+body {
+  font-family: "Adobe Jenson Pro";
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  /* color: rgba(255,255,255,0.7);
+  */
+  /* background-image: url('../_images/Untitled-7.gif');
+  */
+  background-attachment: fixed;
+  background-position:center;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60%;
+  margin: auto;
+  text-align: justify;
+}
+
+h1 {
+  font-size: 7em;
+  margin-bottom: 20px;
+  line-height: .85em;
+  text-align: left;
+}
+
+h2 {
+  font-family: "Avenir Next";
+  font-size: 2em;
+  font-weight: 100;
+  margin-top: 30px;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+p {
+margin-top: 0;
+font-weight: 500;
+margin-bottom: 1em;
+font-size: 2em;
+line-height: 1.2em;
+}
+
+#mainBlock {
+width: 700px;
+margin: auto;
+}
+
+a {color:rgba(220, 255, 255, .8)
+
+}

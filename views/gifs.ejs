@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+      here are some gifs:
+    </p>
+    <ol style="width: 80%; margin: auto">
+      <% for (i=0; i<gifs.length; i++) { %>
+        <li>
+          <a href= <%= gifs[i].url %> >link to <%- gifs[i].title %> </a>
+          <br/>
+          <img src= <%= gifs[i].url %> />
+        </li>
+      <% }  %>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>codelab logger</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600,600i" rel="stylesheet">
+    <link rel="stylesheet" href="style-main.css" type="text/css" media="all">
+    <link rel="stylesheet" href="style-grid.css" type="text/css" media="all">
+</head>
+
+<body class="site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header class="masthead">
+        <code class="identifier"><pre>.clickForJson</pre></code>
+    </header><!-- .masthead -->
+
+    <div class="page-title">
+        <code class="identifier"><pre>.page-title</pre></code>
+        <h1>Demo sandbox for Advanced Layouts with CSS Grid</h1>
+    </div><!-- .page-title -->
+
+    <main id="playercontainer" class="main-content">
+      <div class="container">
+        container start before iframe
+        <iframe id="player" src="https://www.youtube.com/embed/Wmc8bQoL-J0?enablejsapi=1"
+frameborder="0" allowfullscreen class="video"></iframe>
+      </div>
+      <div id="results" style="font-family: 'Avenir'; font-size: 10px; ">
+        results here
+      </div>
+    </main><!-- #content .main-content -->
+    <div class="result-box">
+      results will go here.
+    </div>
+    <aside class="sidebar">
+        <code class="identifier"><pre>.sidebar</pre></code>
+        <h2>Sidebar</h2>
+          <div id="logButton" style="width: 200px; height: 50px; border-style: solid; border-color: green; border-radius: 5px; border-width: 3px; padding: 5px; ">
+            click here on the beat.
+          </div>
+          <div id="likeButton" style="width: 200px; height: 50px; border-style: solid; border-color: green; border-radius: 5px; border-width: 3px; padding: 5px;">
+            click here to like a moment.
+          </div>
+
+
+    </aside><!-- .sidebar -->
+
+    <footer class="footer-content">
+
+        <code class="identifier"><pre>.footer-content</pre></code>
+
+        <h2>Footer</h2>
+
+    </footer><!-- .footer-content -->
+
+  <script type="text/javascript">
+    var tag = document.createElement('script');
+    tag.id = 'iframe-demo';
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var logButton = document.querySelector('#logButton');
+    console.log(logButton + " is the log button");
+    var results = document.querySelector('#results');
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange,
+          }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
+      event.target.playVideo();
+    }
+
+    function onPlayerReady(event) {
+
+    }
+
+
+    function onPlayerStateChange(event) {
+      changeBorderColor(event.data);
+    }
+
+    logButton.addEventListener("click", function(){
+      var d = new Date();
+      var theClockTime = d.getTime();
+      var videoTime = 1000 * player.getCurrentTime();
+      var theOffset = videoTime-theClockTime;
+      console.log(theOffset);
+      console.log(theClockTime);
+      var newText = ("logged click at " + player.getCurrentTime());
+      var newElement = document.createElement('p');
+      newElement.innerHTML = newText;
+      results.appendChild(newElement);
+    })
+
+    function stopVideo() {
+      player.stopVideo();
+    }
+
+  </script>
+</body>
+
+</html>
