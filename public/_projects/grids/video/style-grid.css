@@ -5,6 +5,7 @@
   grid-template-areas:
     "title title"
     "main main"
+    "buttonbox buttonbox"
     "sidebar sidebar"
     "footer masthead";
   grid-gap: .3em;
