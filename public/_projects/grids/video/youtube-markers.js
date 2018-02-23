@@ -29,7 +29,8 @@ function onYouTubeIframeAPIReady() {
         'controls': 0,
         'fs': 0,
         'rel': 0,
-        'showinfo': 0
+        'showinfo': 0,
+        'playsinline': true
       }
   });
 }
@@ -65,7 +66,7 @@ logButton.addEventListener("click", function(){
     password: pw,
     eventType: 'beat',
     ts: theClockTime,
-    videots: videoTime
+    videots: videoTime,
   })
 })
 
