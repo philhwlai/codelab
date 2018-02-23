@@ -9,20 +9,23 @@ const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    res.render('index', { title: 'codeLab', links: links_list });
+});
+
+router.get('/animedemo', function(req, res, next){
   var linksFolder = path.join(__basedir, 'public/_tests/animejs/examples/anime');
   fs.readdir(linksFolder, (err, paths)=>{
     var theLinks = [];
     paths.forEach(path=>{
       theLinks.push(
         {'title': path,
-        'url': ('tests/animejs/examples/anime/' + path)
+        'url': ('_tests/animejs/examples/anime/' + path)
         }
       )
     })
-    var newLinks = theLinks.concat(links_list);
-    res.render('index', { title: 'codeLab', links: newLinks });
+    res.render('index', { title: 'anime js links', links: theLinks });
   })
-});
+})
 
 router.get('/linksdemo', function(req, res, next){
   console.log(JSON.stringify(links_list, null, 4));
@@ -38,7 +41,7 @@ router.get('/threejs', function(req, res, next){
 })
 
 router.get('/youtube-markers', function(req, res, next){
-  res.sendFile(path.join(__basedir, 
+  res.sendFile(path.join(__basedir,
     'public/_projects/grids/video/youtube-markers.html'));
 })
 
