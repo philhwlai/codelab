@@ -6,6 +6,10 @@ const videos = require('../data/json/videos.json');
 const links_list = require('../data/json/links.json');
 const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
 const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
+/* slack gifs infrastructure */
+const { RtmClient, CLIENT_EVENTS } = require('@slack/client');
+var rtm = new RtmClient(process.env.verification_token)
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
