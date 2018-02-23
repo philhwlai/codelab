@@ -10,6 +10,9 @@ var outButton = document.querySelector('#outButton');
 var results = document.querySelector('#result-box');
 var player;
 var userEvents = [];
+var sendButton = document.querySelector('#sendButton');
+var nameField = document.querySelector('#name');
+var passwordField = document.querySelector('#password');
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('playercontainer', {
@@ -102,6 +105,17 @@ outButton.addEventListener("click", function(){
     videots: videoTime
   })
 })
+
+sendButton.addEventListener("click", function(){
+  var d = new Date();
+  var theClockTime = d.getTime();
+  nameField.innerHTML
+  console.log("JSON request submitted.");
+  console.log("submitted by " + nameField.innerHTML + " with password " + passwordField.innerHTML);
+  console.log(JSON.stringify(userEvents, null, 4));
+});
+
+
 
 function stopVideo() {
   player.stopVideo();
