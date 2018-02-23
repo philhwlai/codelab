@@ -30,7 +30,7 @@ function onYouTubeIframeAPIReady() {
         'fs': 0,
         'rel': 0,
         'showinfo': 0,
-        'playsinline': true
+        'playsinline': 1
       }
   });
 }
