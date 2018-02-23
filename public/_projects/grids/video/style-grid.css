@@ -9,6 +9,8 @@
     "sidebar sidebar"
     "footer masthead";
   grid-gap: .3em;
+  font-family: monospace;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 600px) {
@@ -59,6 +61,7 @@
   /* z-index: +100; */
   grid-area: masthead;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .sidebar {
@@ -105,19 +108,37 @@
 
 #logButton {
   grid-area: logbutton;
+  cursor: pointer;
 }
 
 #likeButton {
   grid-area: likebutton;
+  cursor: pointer;
 }
 
 #inButton {
   grid-area: inbutton;
+  cursor: pointer;
 }
 
 #outButton {
   grid-area: outbutton;
+  cursor: pointer;
 }
+
+#playButton {
+  grid-area: playButton;
+  cursor: pointer;
+  background-color: rgba(70,190,90,0.9);
+}
+
+
+#pauseButton {
+  grid-area: pauseButton;
+  cursor: pointer;
+  background-color: rgba(170,70,90,0.9);
+}
+
 
 #player {
   border-radius: 10px;
@@ -126,15 +147,22 @@
 #the-button-box{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
+    "playButton pauseButton"
     "logbutton likebutton"
     "inbutton outbutton";
 
 }
 
+
 .form-input {
-  padding-left: 30px;
+  padding-left: 25px;
+}
+
+.no-background{
+  color: white;
+  background-color: rgba(0,0,0,0.0);
 }
 
 h2 {
@@ -143,4 +171,9 @@ h2 {
 
 h1 {
 
+}
+
+input {
+  font-family: monospace;
+  font-size: 12px;
 }

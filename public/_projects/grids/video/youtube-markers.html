@@ -13,18 +13,19 @@
 <body class="site">
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-    <header class="masthead" id="sendButton" style="cursor: pointer;">
+    <header class="masthead" id="sendButton">
         <code class="identifier"><pre>.clickForJson</pre></code>
     </header><!-- .masthead -->
 
     <div class="page-title">
         <code class="identifier"><pre>codeLab logging machine</pre></code>
         <label class="form-input">name:
-          <input type="text" id="name" placeholder="first last" />
+          <input type="text" id="name" placeholder="first ok" />
         </label>
         <label class="form-input">password:
-          <input type="text" id="password"  placeholder="your password" />
+          <input type="text" id="password"  placeholder="not secure" />
         </label>
+
     </div><!-- .page-title -->
 
     <main id="playercontainer" class="main-content">
@@ -33,6 +34,12 @@
     </main><!-- #content .main-content -->
 
     <div class="button-box" id="the-button-box">
+      <div id="playButton" class="logging-button">
+        click here to play.
+      </div>
+      <div id="pauseButton" class="logging-button">
+        click here to pause.
+      </div>
       <div id="logButton" class="logging-button">
         click here on the beat.
       </div>
