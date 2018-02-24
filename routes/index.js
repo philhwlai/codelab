@@ -36,6 +36,15 @@ router.get('/videos', function(req, res, next){
   res.render('videos', {title: 'Video Bookmarks', videoLinks: videos, width: 480, height: 270})
 })
 
+router.get('/threejs', function(req, res, next){
+  res.sendFile(path.join(__basedir, 'public/thepage/web-projects-2017/atom-ll-workshop/three-tests/index.html'));
+})
+
+router.get('/youtube-markers', function(req, res, next){
+  res.sendFile(path.join(__basedir,
+    'public/_projects/mk/youtube-markers/youtube-markers.html'));
+})
+
 router.post('/youtube-data', function(req, res, next){
   console.log("received post request from " + req.body.name);
   console.log(JSON.stringify(req.body));
@@ -70,14 +79,44 @@ router.post('/youtube-data', function(req, res, next){
   //
 });
 
-router.get('/threejs', function(req, res, next){
-  res.sendFile(path.join(__basedir, 'public/thepage/web-projects-2017/atom-ll-workshop/three-tests/index.html'));
+router.get('/vimeo-markers', function(req, res, next){
+  res.sendFile(path.join(__basedir,
+    'public/_projects/mk/vimeo-markers/vimeo-markers.html'));
 })
 
-router.get('/youtube-markers', function(req, res, next){
-  res.sendFile(path.join(__basedir,
-    'public/_projects/mk/youtube-markers/youtube-markers.html'));
-})
+router.post('/vimeo-data', function(req, res, next){
+  console.log("received post request from " + req.body.name);
+  console.log(JSON.stringify(req.body));
+  var postTs = new Date().getTime();
+  console.log("the postTs is " + postTs);
+  if (req.body.password==process.env.DEV_PASSWORD) {
+    console.log("password match");
+  }
+  req.body.events.forEach(marker => {
+      console.log("creating marker for " + marker.ts);
+      var newMarker = new Marker({
+        userName : req.body.name,
+        note: marker.note,
+        videoId: marker.videoId,
+        videoUrl: marker.videoUrl,
+        videoTitle: marker.videoTitle,
+        clockTs : marker.clockTs,
+        videoTs : marker.videoTs,
+        type : marker.eventType
+      })
+      console.log(JSON.stringify(newMarker));
+      newMarker.save(function(err){
+        if (err) { console.log("there was an error"); return next(err); }
+      })
+  })
+
+  res.redirect('/vimeo-markers');
+
+  // var newResult = new CatResult({name: catMechanics[req.body.catId].name
+  //   , rating: req.body.points, loadTs: (req.body.loadTs), postTs: postTs});
+  // newResult.save((err)=> {console.log("saved result:\n" + JSON.stringify(newResult, null, 5))});
+  //
+});
 
 router.get('/logger', function(req, res, next){
   res.sendFile(path.join(__basedir,

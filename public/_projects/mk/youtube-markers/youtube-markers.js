@@ -56,7 +56,7 @@ buttonBox.addEventListener('click', function(e){
     var newText = ("logged " + e.target.id + " event at " + player.getCurrentTime());
     var newElement = document.createElement('p');
     newElement.innerHTML = newText;
-    results.appendChild(newElement);
+    results.prepend(newElement);
     var pw;
     if (!passwordField.value) {
       pw = "none"
