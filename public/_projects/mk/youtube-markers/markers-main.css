@@ -87,7 +87,7 @@ pre {
     font-family: "Courier 10 Pitch", Courier, monospace;
     color: #ddca7e;
     background: #282c34;
-	padding: .5em .8em;
+		padding: .5em .8em;
     border-radius: .2em;
 }
 
@@ -95,7 +95,7 @@ code,
 kbd,
 tt,
 var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font: 12px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 abbr,
@@ -168,7 +168,7 @@ General styling
 --------------------------------------------------------------*/
 
 .site {
-	margin: 1em;
+	/* margin: 1em; */
 }
 
 .masthead,
@@ -176,28 +176,28 @@ General styling
 .main-content,
 .sidebar,
 .footer-content {
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
     padding: 1em;
     color: white;
 
 }
 
 .masthead {
-    background-color: #b46ae3;
+    background-color: rgba(220,0,170,.4);
 }
 
 .page-title {
-    background-color: #51a7fa;
+    background-color: rgba(255,140,0,.6);
 }
 
 .main-content {
-    background-color: #70bf40;
+    background-color: rgba(0,130,190,.4);
 }
 
 .sidebar {
-    background-color: #f49018;
+    background-color: rgba(20,0,170,.4);
 }
 
 .footer-content {
-    background-color: #0265c0;
+    background-color: rgba(85,240,100,.5);
 }
