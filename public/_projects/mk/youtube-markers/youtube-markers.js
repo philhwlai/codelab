@@ -3,7 +3,8 @@ var results = document.querySelector('#result-box');
 var player;
 var userEvents = [];
 var currentVideoId = 'z5rRZdiu1UE'
-var sendButton = document.querySelector('#sendButton');
+var sendButton = document.querySelector('#sendToServer');
+var jsonButton = document.querySelector('#jsonButton');
 var nameField = document.querySelector('#name');
 var passwordField = document.querySelector('#password');
 var videoLinkButtonBox = document.querySelector('#video-button-box');
@@ -110,9 +111,10 @@ function onPlayerStateChange(event){
 }
 
 sendButton.addEventListener("click", function(){
-  var d = new Date();
-  var theClockTime = d.getTime();
-  nameField.innerHTML
+  sendData(userEvents);
+});
+
+jsonButton.addEventListener("click", function(){
   results.innerHTML = "<pre class='no-background'>" + (JSON.stringify(userEvents, null, 4)) + "</pre>";
   // workaround to copy json to clipboard.  Remove??
   var tempText = document.createElement("textarea");
@@ -121,8 +123,6 @@ sendButton.addEventListener("click", function(){
   tempText.select();
   document.execCommand("copy");
   document.body.removeChild(tempText);
-  // send data to server
-  sendData(userEvents);
 });
 
 function sendData(data) {

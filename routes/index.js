@@ -7,8 +7,6 @@ const links_list = require('../data/json/links.json');
 const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
 const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
 var Marker = require('../models/marker.js');
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'codeLab', links: links_list });
