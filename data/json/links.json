@@ -12,8 +12,12 @@
     "url": "/gifs"
   },
   {
-    "title": "youtube markers test",
+    "title": "youtube markers machine",
     "url": "/youtube-markers"
+  },
+  {
+    "title": "learning lab live logger",
+    "url": "/logger"
   },
   {
     "title": "df projects",

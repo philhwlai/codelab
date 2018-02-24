@@ -31,7 +31,7 @@
   }
 }
 
- .container {
+.container {
     position: relative;
     width: 100%;
     height: 0;
@@ -144,7 +144,7 @@
   border-radius: 10px;
 }
 
-#the-button-box{
+#the-button-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -155,6 +155,21 @@
 
 }
 
+#video-button-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.video-link-button {
+  cursor: pointer;
+  background-color: rgba(70,190,90,0.9);
+  font-family: 'Courier';
+  font-size: 10px;
+  margin: 4px;
+  border-radius: 5px;
+  padding: 10px;
+}
 
 .form-input {
   padding-left: 25px;
