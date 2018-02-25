@@ -1,0 +1,35 @@
+body {
+  color: white;
+  font-family: "Avenir";
+  font-size: 12px;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  height: 120vh;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: rgba(0,0,0,.6);
+}
+
+.small {
+  margin: auto;
+  margin-top:50px;
+  width: 80%;
+  height: 150px;
+  position: sticky;
+  top: 20px;
+  border-radius: 10px;
+}
+
+.white {
+  background-color: white;
+  opacity: .8;
+}
+
+.orange {
+  background-color: orange;
+  opacity: .8;
+  top: 30px;
+}
