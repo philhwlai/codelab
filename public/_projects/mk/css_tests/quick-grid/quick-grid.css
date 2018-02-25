@@ -2,202 +2,90 @@
 Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers */
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
+@import url("https://use.typekit.net/qik1wrg.css");
+@import url('https://fonts.googleapis.com/css?family=Pompiere');
+
+body {
+	font-family: "Pompiere";
+	font-size: 16px;
+}
+
+#grid {
+	width: 90%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 300px 300px 1fr;
+	grid-template-rows: 100px 200px 200px auto auto;
+	grid-template-areas:
+		" . masthead masthead ."
+		"in player player notes"
+		"out player player notes"
+		" . edits edits notes"
+		" . . . notes";
+	grid-gap:.5em;
+
+}
+
+.hidden {
+		opacity: .2;
+}
+
+#masthead {
+	grid-area: masthead;
+	text-align: center;
+}
+
+#player {
+	grid-area: player;
+	border-radius: 10px;
 	overflow: hidden;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
+#in {
+	grid-area: in;
+	text-align: center;
+	transition: background-color 1s;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: rgba(20,200,50,.5);
 }
 
-/*--------------------------------------------------------------
-Typography
---------------------------------------------------------------*/
+#in:hover {
 
-body {
-	margin: 0;
+	background-color: rgba(20,200,50,.8);
 }
 
-body,
-button,
-input,
-select,
-textarea {
-	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-	font-size: 18px;
-	line-height: 1.5;
+#out {
+	grid-area: out;
+	text-align: center;
+	transition: background-color 1s;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: rgba(200,0,30,.5);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
+#out:hover {
+
+	background-color: rgba(200,0,30,.8);
+}
+
+#edits {
+	grid-area: edits;
+}
+
+#notes {
+	grid-area: notes;
+}
+h1 {
+  font-family: "Pompiere",sans-serif;
+	font-size: 60px;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin: 0;
 }
 
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-    display: inline-block;
-    font-family: "Courier 10 Pitch", Courier, monospace;
-    color: #ddca7e;
-    background: #282c34;
-		padding: .5em .8em;
-    border-radius: .2em;
-}
-
-code,
-kbd,
-tt,
-var {
-	font: 12px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-sup,
-sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	bottom: 1ex;
-}
-
-sub {
-	top: .5ex;
-}
-
-small {
-	font-size: 75%;
-}
-
-big {
-	font-size: 125%;
-}
-
-/* Global layouts */
-@media screen and (min-width: 700px) {
-    .two-column {
-        column-count: 2;
-        column-gap: 2.4em;
-    }
-}
-
-/* Global buttons */
-.content-button {
-	padding: .5em 1em;
-	border: 3px solid #B51C35;
-	/*border-radius: 10px;*/
-	font-weight: 600;
-}
-
-a.content-button {
-	color: black;
-	text-decoration: none;
-}
-
-a.content-button:focus,
-a.content-button:hover {
-	background: #B51C35;
-	color: #FFFCED;
-}
-
-
-/*--------------------------------------------------------------
-General styling
---------------------------------------------------------------*/
-
-.site {
-	/* margin: 1em; */
-}
-
-.masthead,
-.page-title,
-.main-content,
-.sidebar,
-.footer-content {
-	/* margin-bottom: 1em; */
-    padding: 1em;
-    color: white;
-
-}
-
-.masthead {
-    
-}
-
-.page-title {
-    background-color: rgba(255,140,0,.6);
-}
-
-.main-content {
-    background-color: rgba(0,130,190,.4);
-}
-
-.sidebar {
-    background-color: rgba(20,0,170,.4);
-}
-
-.footer-content {
-    background-color: rgba(85,240,100,.5);
+h2 {
+	font-size: 80px;
+	margin: auto;
 }
