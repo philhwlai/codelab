@@ -166,7 +166,8 @@ router.post('/slack/interactions', function(req, res){
   // var theResponse = JSON.parse(req.body)
   // console.log(JSON.stringify(theResponse));
   console.log(req.body.payload);
-  res.status(200).end()
+  var payload = JSON.parse(req.body.payload)
+  res.send(JSON.stringify(payload))
 })
 
 router.post('/slack/menuactions', function(req, res){
