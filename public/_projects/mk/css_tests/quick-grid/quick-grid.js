@@ -6,7 +6,8 @@ var playercontainer = document.querySelector("#player");
 var vimeoElement = document.createElement('iframe')
 var options = {
         id: currentVideoId,
-        width: 600,
+        width: 560,
+        height: 315,
         loop: true
   };
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const request = require('request');
 const fs = require('fs');
 const path = require('path');
 const videos = require('../data/json/videos.json');
@@ -123,7 +124,36 @@ router.get('/logger', function(req, res, next){
     'public/_projects/mk/ll-livelogger/livelogger.html'));
 })
 
+router.get('/auth', (req, res) =>{
+    res.sendFile(__basedir + '/public/_projects/mk/slack/add_to_slack.html')
+})
+
+router.get('/auth/redirect', (req, res) =>{
+    var options = {
+        uri: 'https://slack.com/api/oauth.access?code='
+            +req.query.code+
+            '&client_id='+process.env.CLIENT_ID+
+            '&client_secret='+process.env.CLIENT_SECRET+
+            '&redirect_uri='+process.env.REDIRECT_URI,
+        method: 'GET'
+    }
+    request(options, (error, response, body) => {
+        var JSONresponse = JSON.parse(body)
+        if (!JSONresponse.ok){
+            console.log(JSONresponse)
+            res.send("Error encountered: \n"+JSON.stringify(JSONresponse)).status(200).end()
+        }else{
+            console.log(JSONresponse)
+            res.send("Success!")
+        }
+    })
+})
+
 router.get('/slack', slackTools.channel_history);
+
+router.get('/slackapp', function(err, res, next){
+  res.send('slack app will go here')
+});
 
 router.get('/gifs', linksMachine.gifs);
 
