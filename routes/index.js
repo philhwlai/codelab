@@ -159,6 +159,7 @@ router.get('/slack', slackTools.channel_history);
 
 router.post('/slackevents', function(req, res){
   res.send(req.body.challenge);
+  console.log(JSON.stringify(req.body));
 })
 
 router.get('/slackapp', function(req, res, next){
@@ -174,12 +175,11 @@ router.post('/llgifs', function(req, res, next){
       "text": ("got your message " + req.body.user_name),
       "attachments": [{
         "text":"this is attachment text",
-        "image_url":"http://codelab.learninglab.xyz/gifs/moira_is_unimpressed_with_you_180_15.gif"    
+        "image_url":"http://codelab.learninglab.xyz/gifs/moira_is_unimpressed_with_you_180_15.gif"
       }]}
     res.send(message);
   }
   console.log("received a req from Slack: \n\n++++++++++++++++++\n\n" + JSON.stringify(req.body));
-
 })
 
 module.exports = router;
