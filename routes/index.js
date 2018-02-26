@@ -161,10 +161,14 @@ router.post('/slackevents', function(req, res){
   res.send(req.body.challenge);
 })
 
-router.get('/slackapp', function(err, res, next){
+router.get('/slackapp', function(req, res, next){
   res.send('slack app will go here')
 });
 
 router.get('/gifs', linksMachine.gifs);
+
+router.post('/llgifs', function(req, res, next){
+  console.log("received a req from Slack: \n\n++++++++++++++++++\n\n" + JSON.stringify(req.body));
+})
 
 module.exports = router;
