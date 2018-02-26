@@ -157,8 +157,16 @@ router.get('/slack', slackTools.channel_history);
 //   res.send(req.body.challenge);
 // })
 
-router.post('/slackevents', function(req, res){
+router.post('/slack/events', function(req, res){
   res.send(req.body.challenge);
+  console.log(JSON.stringify(req.body));
+})
+
+router.post('/slack/interactions', function(req, res){
+  console.log(JSON.stringify(req.body));
+})
+
+router.post('/slack/menuactions', function(req, res){
   console.log(JSON.stringify(req.body));
 })
 
@@ -181,5 +189,65 @@ router.post('/llgifs', function(req, res, next){
   }
   console.log("received a req from Slack: \n\n++++++++++++++++++\n\n" + JSON.stringify(req.body));
 })
+
+router.post('/slack/buttons', (req, res) =>{
+    res.status(200).end() // best practice to respond with empty 200 status code
+    var reqBody = req.body
+    var responseURL = reqBody.response_url
+    if (reqBody.token != process.env.SLACK_VERIFICATION_TOKEN){
+        res.status(403).end("Access forbidden")
+    }else{
+        var message = {
+            "text": "This is your first interactive message",
+            "attachments": [
+                {
+                    "text": "Building buttons is easy right?",
+                    "fallback": "Shame... buttons aren't supported in this land",
+                    "callback_id": "button_tutorial",
+                    "color": "#3AA3E3",
+                    "attachment_type": "default",
+                    "actions": [
+                        {
+                            "name": "yes",
+                            "text": "yes",
+                            "type": "button",
+                            "value": "yes"
+                        },
+                        {
+                            "name": "no",
+                            "text": "no",
+                            "type": "button",
+                            "value": "no"
+                        },
+                        {
+                            "name": "maybe",
+                            "text": "maybe",
+                            "type": "button",
+                            "value": "maybe",
+                            "style": "danger"
+                        }
+                    ]
+                }
+            ]
+        }
+        sendMessageToSlackResponseURL(responseURL, message)
+    }
+})
+
+function sendMessageToSlackResponseURL(responseURL, JSONmessage){
+    var postOptions = {
+        uri: responseURL,
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        json: JSONmessage
+    }
+    request(postOptions, (error, response, body) => {
+        if (error){
+            // handle errors as you see fit
+        }
+    })
+}
 
 module.exports = router;
