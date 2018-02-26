@@ -119,7 +119,6 @@ router.post('/vimeo-data', function(req, res, next){
   //
 });
 
-
 router.get('/logger', function(req, res, next){
   res.sendFile(path.join(__basedir,
     'public/_projects/mk/ll-livelogger/livelogger.html'));
@@ -153,10 +152,6 @@ router.get('/auth', (req, res) =>{
 
 router.get('/slack', slackTools.channel_history);
 
-// router.get('/slackeventconfirmation', function(req, res){
-//   res.send(req.body.challenge);
-// })
-
 router.post('/slack/events', function(req, res){
   res.send(req.body.challenge);
   console.log(JSON.stringify(req.body));
@@ -166,7 +161,8 @@ router.post('/slack/interactions', function(req, res){
   // var theResponse = JSON.parse(req.body)
   // console.log(JSON.stringify(theResponse));
   console.log(req.body.payload);
-  var payload = JSON.parse(req.body.payload)
+  var payload = JSON.parse(req.body.payload);
+  var message = {"text": ("received message from " + payload.user.name + ", which was the response " + payload.actions.value)}
   res.send(JSON.stringify(payload))
 })
 
