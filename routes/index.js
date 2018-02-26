@@ -153,11 +153,11 @@ router.get('/auth', (req, res) =>{
 
 router.get('/slack', slackTools.channel_history);
 
-router.get('/slackeventconfirmation', function(req, res){
-  res.send(req.body.challenge);
-})
+// router.get('/slackeventconfirmation', function(req, res){
+//   res.send(req.body.challenge);
+// })
 
-router.post('/slackeventconfirmation', function(req, res){
+router.post('/slackevents', function(req, res){
   res.send(req.body.challenge);
 })
 
