@@ -162,7 +162,7 @@ router.post('/slack/interactions', function(req, res){
   // console.log(JSON.stringify(theResponse));
   console.log(req.body.payload);
   var payload = JSON.parse(req.body.payload);
-  var message = {"text": ("received message from " + payload.user.name + ", which was the response " + payload.actions.value)}
+  var message = {"text": ("received message from " + payload.user.name + ", which was the response " + payload.actions.value), "response_type": "in_channel"}
   res.send(JSON.stringify(payload))
 })
 
@@ -181,6 +181,7 @@ router.post('/llgifs', function(req, res, next){
     console.log("tokens match, and message is " + req.body.text);
     var message = {
       "text": ("got your message " + req.body.user_name),
+      "response_type": "in_channel",
       "attachments": [{
         "text":"this is attachment text",
         "image_url":"http://codelab.learninglab.xyz/gifs/moira_is_unimpressed_with_you_180_15.gif"
