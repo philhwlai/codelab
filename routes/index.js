@@ -3,15 +3,19 @@ const router = express.Router();
 const request = require('request');
 const fs = require('fs');
 const path = require('path');
+const mong
 const videos = require('../data/json/videos.json');
 const links_list = require('../data/json/links.json');
 const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
 const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
 var Marker = require('../models/marker.js');
+var SlackEvent = require('../models/slack_event.js');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'codeLab', links: links_list });
 });
+
 
 router.get('/animedemo', function(req, res, next){
   var linksFolder = path.join(__basedir, 'public/_tests/animejs/examples/anime');
@@ -153,7 +157,15 @@ router.get('/auth', (req, res) =>{
 router.get('/slack', slackTools.channel_history);
 
 router.post('/slack/events', function(req, res){
-  res.send(req.body.challenge);
+  // res.send(req.body.challenge);
+  var newSlackEvent = new SlackEvent(req.body);
+  newSlackEvent.save(function(err){
+    if (err) {console.log("there was an error");
+    return next(err)}
+    else {
+      console.log("saved event to db");
+    }
+  })
   console.log(JSON.stringify(req.body));
 })
 
@@ -170,7 +182,7 @@ router.post('/slack/menuactions', function(req, res){
   console.log(JSON.stringify(req.body));
 })
 
-router.get('/slackapp', function(req, res, next){
+router.get('/slack/app', function(req, res, next){
   res.send('slack app will go here')
 });
 
