@@ -168,7 +168,18 @@ router.get('/slackapp', function(req, res, next){
 router.get('/gifs', linksMachine.gifs);
 
 router.post('/llgifs', function(req, res, next){
+  if (req.body.token == process.env.SLACK_VERIFICATION_TOKEN) {
+    console.log("tokens match, and message is " + req.body.text);
+    var message = {
+      "text": ("got your message " + req.body.user_name),
+      "attachments": [{
+        "text":"this is attachment text",
+        "image_url":"http://codelab.learninglab.xyz/gifs/moira_is_unimpressed_with_you_180_15.gif"    
+      }]}
+    res.send(message);
+  }
   console.log("received a req from Slack: \n\n++++++++++++++++++\n\n" + JSON.stringify(req.body));
+
 })
 
 module.exports = router;
