@@ -1,0 +1,99 @@
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+@import url("https://use.typekit.net/qik1wrg.css");
+@import url('https://fonts.googleapis.com/css?family=Pompiere');
+
+body {
+	font-family: "Pompiere";
+	font-size: 16px;
+}
+
+#grid {
+	width: 90%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 278px 277px 1fr;
+	grid-template-rows: 140px 155px 155px auto auto;
+	grid-template-areas:
+		" . masthead masthead ."
+		"in player player notes"
+		"out player player notes"
+		" . edits edits notes"
+		" . . . notes";
+	grid-gap: 5px;
+
+}
+
+.hidden {
+		opacity: .2;
+}
+
+#masthead {
+	grid-area: masthead;
+	text-align: center;
+}
+
+#player {
+	grid-area: player;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#player-overlay {
+	grid-area: player;
+	z-index: 5;
+}
+
+#in {
+	grid-area: in;
+	text-align: center;
+	transition: background-color 1s;
+	cursor: pointer;
+	border-radius: 10px;
+	padding-top: 18px;
+	background-color: rgba(20,200,50,.5);
+}
+
+#in:hover {
+
+	background-color: rgba(20,200,50,.8);
+}
+
+#out {
+	grid-area: out;
+	text-align: center;
+	transition: background-color 1s;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: rgba(200,0,30,.5);
+	padding-top: 18px;
+}
+
+#out:hover {
+
+	background-color: rgba(200,0,30,.8);
+}
+
+#edits {
+	grid-area: edits;
+}
+
+#notes {
+	grid-area: notes;
+	padding-left: 5px;
+}
+h1 {
+  font-family: "Pompiere",sans-serif;
+	font-size: 60px;
+}
+
+p {
+	margin: 0;
+}
+
+h2 {
+	font-size: 80px;
+	margin: auto;
+}

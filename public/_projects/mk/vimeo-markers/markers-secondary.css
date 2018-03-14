@@ -18,7 +18,7 @@
     display: grid;
     position: fixed;
     grid-template-columns: 400px 1fr 1fr;
-    grid-template-rows: 100px 260px 1fr 100px;
+    grid-template-rows: 100px 232px 1fr 100px;
     grid-template-areas:
       "title title masthead"
       "main sidebar sidebar"
