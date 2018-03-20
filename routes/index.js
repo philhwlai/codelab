@@ -88,6 +88,11 @@ router.get('/vimeo-markers', function(req, res, next){
     'public/_projects/mk/vimeo-markers/vimeo-markers.html'));
 })
 
+router.get('/cello-tap', function(req, res, next){
+  res.sendFile(path.join(__basedir,
+    'public/_projects/mk/vimeo-markers/cello-tap.html'));
+})
+
 router.post('/vimeo-data', function(req, res, next){
   console.log("received post request from " + req.body.name);
   console.log(JSON.stringify(req.body));
