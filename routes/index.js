@@ -90,7 +90,7 @@ router.get('/vimeo-markers', function(req, res, next){
 
 router.get('/cello-tap', function(req, res, next){
   res.sendFile(path.join(__basedir,
-    'public/_projects/mk/vimeo-markers/cello-tap.html'));
+    'public/_projects/mk/cello-tap/index.html'));
 })
 
 router.post('/vimeo-data', function(req, res, next){
