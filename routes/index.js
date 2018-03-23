@@ -44,6 +44,12 @@ router.get('/threejs', function(req, res, next){
   res.sendFile(path.join(__basedir, 'public/thepage/web-projects-2017/atom-ll-workshop/three-tests/index.html'));
 })
 
+router.get('/weitzman', function(req, res, next){
+  res.redirect('/_pages/specifics/weitzman-clip.html');
+})
+
+
+
 router.get('/youtube-markers', function(req, res, next){
   res.sendFile(path.join(__basedir,
     'public/_projects/mk/youtube-markers/youtube-markers.html'));
