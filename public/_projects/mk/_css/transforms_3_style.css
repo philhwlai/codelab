@@ -1,0 +1,61 @@
+/* body{
+  background-image: url(../_images/c4d_MLV.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+*/
+
+.wrapper {
+  margin: auto;
+  margin-top: 50px;
+  width: 50%;
+  position: relative;
+}
+
+.rotatingThing {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  position: absolute;
+  background: url(../_images/star.png) top center no-repeat;
+  background-size: contain;
+  animation: grow 2s linear infinite;
+  animation-play-state: paused;
+}
+
+.rotatingThing:hover {
+  animation-play-state: running;
+}
+
+
+@keyframes spin {
+  100%{transform: rotate(1turn);}
+
+}
+
+@keyframes grow {
+  0%{transform: scale(.5) rotate(0);}
+  50%{transform: scale(1) rotate(.5turn);}
+  100%{transform: scale(.5) rotate(1turn);}
+
+}
+@keyframes slide {
+  from{transform: translateX(0);}
+  to{transform: translateX(200px);}
+
+}
+
+@keyframes slideY {
+  from{transform: translateY(0);}
+  to{transform: translateY(200px);}
+
+}
+
+@keyframes slideBack {
+  0% {transform: (1000px);}
+  50% {transform: translateX(0px);}
+  100% {transform: translateX(-2000px);}
+
+}

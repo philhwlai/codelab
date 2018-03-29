@@ -12,8 +12,12 @@
     "url": "/gifs"
   },
   {
-    "title": "youtube markers test",
+    "title": "youtube markers machine",
     "url": "/youtube-markers"
+  },
+  {
+    "title": "learning lab live logger",
+    "url": "/logger"
   },
   {
     "title": "df projects",
@@ -26,5 +30,25 @@
   {
     "title": "animejs demos",
     "url": "/animedemo"
+  },
+  {
+    "title": "vimeo markers machine",
+    "url": "/vimeo-markers"
+  },
+  {
+    "title": "Unity Demo",
+    "url": "/_projects/mk/unity/level_007"
+  },
+  {
+    "title": "Cello Tap",
+    "url": "/cello-tap"
+  },
+  {
+    "title": "Stuart Weitzman Clip",
+    "url": "/_pages/specifics/weitzman-clip.html"
+  },
+  {
+    "title": "ll-studio",
+    "url": "/_pages/specifics/ll-studio/"
   }
 ]

@@ -1,0 +1,58 @@
+body {
+  font-family: "Avenir Next";
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  background-image: url('../_images/Untitled-7.gif');
+  background-attachment: fixed;
+  background-position:center;
+  background-position: top;
+  width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Impact";
+  font-size: 4em;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+  line-height: .85em;
+}
+
+h2 {
+  font-family: "Avenir Next";
+  font-size: 2em;
+  font-weight: 100;
+  margin-top: 30px;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.images {
+  width: 800;
+  height: 500;
+  object-fit: contain;
+}
+
+.small-image {
+  border:20px solid rgba(255,255,255,.2);
+  height: 500px;
+  background-image: url('../_images/MK_and_EG_001.png');
+}
+
+p {
+margin-top: 0;
+font-size: .9em;
+font-weight: 500;
+margin-bottom: 0;
+
+}
+
+#mainBlock {
+width: 700px;
+margin: auto;
+}
+
+a {color:rgba(220, 255, 255, .8)
+
+}

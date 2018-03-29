@@ -1,0 +1,68 @@
+
+
+
+
+h1 {
+  font-size: 50px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: rgba(0, 0, 100, 0.7);
+
+}
+
+h3 {
+  font-family: Avenir;
+  font-weight: 300;
+  font-size: 30pt;
+  letter-spacing: 5px;
+  padding: 1px;
+  line-height: 44px;
+}
+
+h4 {
+  font-weight: 500;
+  font-family: Avenir;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 17pt;
+}
+
+p {
+  margin-bottom: .5em;
+  margin-top: .5em;
+  font-family: "Gill Sans";
+  font-weight: 300;
+}
+
+strong {
+  font-weight: bold;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+    margin-top: 0px;
+    font-family: "Avenir";
+    font-size: 14pt;
+
+    color: rgba(20, 20, 20, 0.7);
+}
+
+label {
+  font-size: 12pt;
+
+}
+
+#calc {
+  width: 50%;
+  margin: auto;
+  float: left;
+
+}

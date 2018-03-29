@@ -1,0 +1,22 @@
+#site {
+  width = 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 960px 1fr;
+  grid-template-rows: 1fr 540px 1fr;
+  grid-template-areas:
+    ". title ."
+    ". video .";
+  margin-top: 50px;
+}
+
+
+.title {
+  grid-area: title;
+}
+
+.video {
+  grid-area: video;
+}
