@@ -5,8 +5,6 @@ const fs = require('fs');
 const path = require('path');
 const videos = require('../data/json/videos.json');
 const links_list = require('../data/json/links.json');
-const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
-const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
 var Marker = require('../models/marker.js');
 var SlackEvent = require('../models/slack_event.js');
 
@@ -14,7 +12,6 @@ var SlackEvent = require('../models/slack_event.js');
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'codeLab', links: links_list });
 });
-
 
 router.get('/animedemo', function(req, res, next){
   var linksFolder = path.join(__basedir, 'public/_tests/animejs/examples/anime');
@@ -47,8 +44,6 @@ router.get('/threejs', function(req, res, next){
 router.get('/weitzman', function(req, res, next){
   res.redirect('/_pages/specifics/weitzman-clip.html');
 })
-
-
 
 router.get('/youtube-markers', function(req, res, next){
   res.sendFile(path.join(__basedir,
@@ -164,7 +159,10 @@ router.get('/auth', (req, res) =>{
 //     })
 // })
 
-router.get('/slack', slackTools.channel_history);
+router.get('/slack', function(req, res, next) {
+  console.log("nothing here yet");
+  res.send("nothing ready for the browser yet");
+});
 
 router.post('/slack/events', function(req, res){
   // res.send(req.body.challenge);
@@ -196,7 +194,23 @@ router.get('/slack/app', function(req, res, next){
   res.send('slack app will go here')
 });
 
-router.get('/gifs', linksMachine.gifs);
+router.get('/gifs', function(req, res, next){
+  var gifsFolder = path.join(__basedir, 'public/gifs');
+  fs.readdir(gifsFolder, (err, paths)=>{
+    var theGifs = [];
+    paths.forEach(path=>{
+      if (path !== ".DS_Store") {
+        theGifs.push(
+          {'title': path,
+          'url': ('/gifs/' + path)
+          }
+        )
+      }
+
+    })
+    res.render('gifs', { title: 'the LL gifs', gifs: theGifs });
+  })
+});
 
 router.post('/llgifs', function(req, res, next){
   if (req.body.token == process.env.SLACK_VERIFICATION_TOKEN) {
