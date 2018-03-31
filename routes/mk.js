@@ -17,6 +17,10 @@ router.get('/cellotap', function(req, res, next) {
   res.sendFile(path.join(__basedir, '/public/_projects/cello-tap/index.html'));
 })
 
+router.get('/cello-tap', function(req, res, next) {
+  res.sendFile(path.join(__basedir, '/public/_projects/cello-tap/index.html'));
+})
+
 router.get('/threejs', function(req, res, next){
   res.sendFile(path.join(__basedir, 'public/thepage/web-projects-2017/atom-ll-workshop/three-tests/index.html'));
 })

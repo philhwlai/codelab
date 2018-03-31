@@ -121,11 +121,23 @@
   border-radius: 10px;
   padding: 8px;
   transition: background-color .5s;
+  z-index: -2;
 }
 
 #main-overlay:hover{
   background-color: rgba(70,0,0,.5);
 }
+
+#overlayOff {
+  grid-area: overlayOff;
+  cursor: pointer;
+}
+
+#overlayOn {
+  grid-area: overlayOn;
+  cursor: pointer;
+}
+
 
 #logButton {
   grid-area: logbutton;
@@ -168,8 +180,9 @@
 #the-button-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
+    "overlayOn overlayOff"
     "playButton pauseButton"
     "logbutton likebutton"
     "inbutton outbutton";

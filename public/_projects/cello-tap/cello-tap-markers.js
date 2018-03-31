@@ -63,6 +63,7 @@ videoLinkButtonBox.addEventListener('click', function(e){
             console.log('url:', url);
             currentVideoUrl = url;
             // url = the vimeo.com url for the video
+
           })
             .catch(function(error) {
               switch (error.name) {
@@ -158,6 +159,12 @@ buttonBox.addEventListener('click', function(e){
         case "outButton":
         case "logButton":
           console.log("really pushed the" + e.target.id);
+          break;
+        case "overlayOn":
+          videoOverlay.style.zIndex = "1";
+          break;
+        case "overlayOff":
+          videoOverlay.style.zIndex = "-2";
           break;
         case "playButton":
           console.log("really pushed the" + e.target.id + ", which means we need to play");
