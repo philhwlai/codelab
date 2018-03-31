@@ -2,9 +2,9 @@ var buttonBox = document.querySelector('#the-button-box');
 var results = document.querySelector('#result-box');
 var userEvents = [];
 // temporarily assign currentVideo variables to the default movie
-var currentVideoId = '201940092'
-var currentVideoTitle = 'TranscriptStory Clips'
-var currentVideoUrl = 'https://vimeo.com/201940092'
+var currentVideoId = '260963404'
+var currentVideoTitle = 'Cello Tap'
+var currentVideoUrl = 'https://vimeo.com/260963404'
 var sendButton = document.querySelector('#sendToServer');
 var jsonButton = document.querySelector('#jsonButton');
 var nameField = document.querySelector('#name');
@@ -99,13 +99,29 @@ videoOverlay.addEventListener('click', function(e){
   var y = e.clientY;
   console.log("x is " + x);
   console.log("y is " + y);
+  var trueX = Math.round(3.09*(x - 13));
+  var trueY = Math.round(3.09*(350 - (y - 117)));
+  if (trueX > 1920) {
+    trueX = 1920
+  }
+  if (trueX <0) {
+    trueX = 0
+  }
+  if (trueY > 1080) {
+    trueY = 1080
+  }
+  if (trueY <0) {
+    trueY = 0
+  }
+  console.log("trueX is " + trueX);
+  console.log("trueY is " + trueY);
   var d = new Date();
   var theClockTime = d.getTime();
   player.getCurrentTime()
     .then(function(seconds){
       var videoTime = 1000 * seconds;
       var theOffset = theClockTime-videoTime;
-      var newText = ("logged " + e.target.id + " event at " + videoTime + ". x = " + x + " and y = " + y );
+      var newText = ("logged " + e.target.id + " event at " + videoTime + ". x = " + trueX + " and y = " + trueY );
       var newElement = document.createElement('p');
       newElement.innerHTML = newText;
       results.prepend(newElement);
@@ -119,7 +135,9 @@ videoOverlay.addEventListener('click', function(e){
         clockTs: theClockTime,
         videoTs: videoTime,
         xPosition: x,
-        yPosition: y
+        yPosition: y,
+        trueXPosition: trueX,
+        trueYPosition: trueY
       })
     })
   .catch(function(err){
