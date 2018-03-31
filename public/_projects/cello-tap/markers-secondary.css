@@ -1,28 +1,32 @@
 .site {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 20vh 1fr 1fr 20vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 367px 1fr 1fr;
   grid-template-areas:
     "title title"
     "main main"
     "buttonbox buttonbox"
     "sidebar sidebar"
     "footer masthead";
+    margin: .3em;
+    width: calc(100% - .6em);
   grid-gap: .3em;
   font-family: monospace;
   font-size: 14px;
+  max-height: 100vh;
+  min-height: calc(100vh - .6em);
 }
 
 @media screen and (min-width: 600px) {
   .site {
     display: grid;
     position: fixed;
-    grid-template-columns: 400px 1fr 1fr;
-    grid-template-rows: 100px 232px 1fr 100px;
+    grid-template-columns: 640px 1fr 1fr;
+    grid-template-rows: 100px 367px 1fr 100px;
     grid-template-areas:
-      "title title masthead"
-      "main main sidebar"
-      "buttonbox buttonbox sidebar"
+      "title masthead masthead"
+      "main sidebar sidebar"
+      "buttonbox sidebar sidebar"
       "footer footer footer";
       margin: .3em;
       width: calc(100% - .6em);
@@ -110,6 +114,19 @@
   padding: 10px;
 }
 
+#main-overlay {
+  grid-area: main;
+  overflow: hidden;
+  background-color: rgba(70,0,0,.0);
+  border-radius: 10px;
+  padding: 8px;
+  transition: background-color .5s;
+}
+
+#main-overlay:hover{
+  background-color: rgba(70,0,0,.5);
+}
+
 #logButton {
   grid-area: logbutton;
   cursor: pointer;
@@ -156,7 +173,14 @@
     "playButton pauseButton"
     "logbutton likebutton"
     "inbutton outbutton";
+}
 
+
+
+#touch-zones {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 #video-button-box {

@@ -14,6 +14,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 var index = require('./routes/index');
+var mkRoutes = require('./routes/mk');
 global.__basedir = __dirname;
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/mk', mkRoutes);
 
 app.post('/data', function (req, res) {
   console.log(req.body);

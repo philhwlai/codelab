@@ -11,11 +11,12 @@ var nameField = document.querySelector('#name');
 var passwordField = document.querySelector('#password');
 var videoLinkButtonBox = document.querySelector('#video-button-box');
 var playercontainer = document.querySelector('#playercontainer');
-var vimeoElement = document.createElement('iframe')
+var vimeoElement = document.createElement('iframe');
+var videoOverlay = document.querySelector('#main-overlay');
 
 var options = {
         id: currentVideoId,
-        width: 383,
+        width: 623,
         loop: true
   };
 
@@ -45,7 +46,6 @@ var player = new Vimeo.Player('playercontainer', options);
           }
       });
 });
-
 
 videoLinkButtonBox.addEventListener('click', function(e){
   if (e.target.matches (".video-link-button")) {
@@ -92,6 +92,40 @@ videoLinkButtonBox.addEventListener('click', function(e){
     console.log("problem");
   }
 })
+
+videoOverlay.addEventListener('click', function(e){
+  var x = e.clientX;
+  var y = e.clientY;
+  console.log("x is " + x);
+  console.log("y is " + y);
+  var d = new Date();
+  var theClockTime = d.getTime();
+  player.getCurrentTime()
+    .then(function(seconds){
+      var videoTime = 1000 * seconds;
+      var theOffset = theClockTime-videoTime;
+      var newText = ("logged " + e.target.id + " event at " + videoTime + ". x = " + x + " and y = " + y );
+      var newElement = document.createElement('p');
+      newElement.innerHTML = newText;
+      results.prepend(newElement);
+      userEvents.push({
+        user: nameField.value,
+        note: "",
+        videoId: currentVideoId,
+        videoUrl: currentVideoUrl,
+        videoTitle: currentVideoTitle,
+        eventType: e.target.id,
+        clockTs: theClockTime,
+        videoTs: videoTime,
+        xPosition: x,
+        yPosition: y
+      })
+    })
+  .catch(function(err){
+    console.log(err);
+    });
+});
+
 
 buttonBox.addEventListener('click', function(e){
   console.log("just clicked " + e.target.id);
