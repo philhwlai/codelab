@@ -179,10 +179,10 @@ buttonBox.addEventListener('click', function(e){
           console.log("really pushed the" + e.target.id);
           break;
         case "overlayOn":
-          videoOverlay.style.zIndex = "1";
+          videoOverlay.style.zIndex = "9";
           break;
         case "overlayOff":
-          videoOverlay.style.zIndex = "-2";
+          videoOverlay.style.zIndex = "1";
           break;
         case "playButton":
           console.log("really pushed the" + e.target.id + ", which means we need to play");

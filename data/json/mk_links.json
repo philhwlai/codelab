@@ -4,8 +4,8 @@
     "url": "/_projects/tests/d3/d3_003.html"
   },
   {
-    "title": "Links Demo",
-    "url": "/linksdemo"
+    "title": "Quick Grid",
+    "url": "/_projects/mk/css_tests/quick-grid"
   },
   {
     "title": "the LL gifs",
@@ -20,12 +20,8 @@
     "url": "/logger"
   },
   {
-    "title": "df projects",
-    "url": "/_projects/df"
-  },
-  {
-    "title": "links demo",
-    "url": "/linksdemo"
+    "title": "video background tests",
+    "url": "/_projects/mk/css_tests/video-bg"
   },
   {
     "title": "animejs demos",
@@ -39,10 +35,7 @@
     "title": "Unity Demo",
     "url": "/_projects/mk/unity/level_007"
   },
-  {
-    "title": "Cello Tap",
-    "url": "/cello-tap"
-  },
+
   {
     "title": "Stuart Weitzman Clip",
     "url": "/_pages/specifics/weitzman-clip.html"
@@ -50,5 +43,13 @@
   {
     "title": "ll-studio",
     "url": "/_pages/specifics/ll-studio/"
+  },
+  {
+    "title": "Cello Tap",
+    "url": "/mk/cello-tap"
+  },
+  {
+    "title": "Cello Tap Mouseover",
+    "url": "/_projects/cello-tap/mouseover"
   }
 ]
