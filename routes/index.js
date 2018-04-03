@@ -5,20 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const videos = require('../data/json/videos.json');
 const links_list = require('../data/json/links.json');
-<<<<<<< HEAD
-=======
-const linksMachine = require('../ll_modules/mk_utilities/links_machine.js')
-const slackTools = require('../ll_modules/slack_tools/slack_tools_controllers.js');
-<<<<<<< HEAD
-/* slack gifs infrastructure */
-const { RtmClient, CLIENT_EVENTS } = require('@slack/client');
-var rtm = new RtmClient(process.env.verification_token)
-
-=======
->>>>>>> 9fd1f8584064ff5df0f816f676c50e6a7a524b4a
 var Marker = require('../models/marker.js');
 var SlackEvent = require('../models/slack_event.js');
->>>>>>> upstream/master
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
